@@ -10,9 +10,10 @@ RSpec.describe Calculator do
 
   it 'prints the result' do
     calculator = Calculator.new
+    printer = double
 
-    expect(STDOUT).to receive(:puts).with(5)
+    expect(printer).to receive(:print).with(5)
 
-    calculator.add(2, 3)
+    calculator.add(2, 3, printer)
   end
 end
